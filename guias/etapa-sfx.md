@@ -39,6 +39,19 @@ O Claude lê essa lista, mais a ideia e o storyboard de cada animação. Não pr
 9. **Variação.** Não repetir o mesmo arquivo em ~20 s. Packs com variações existem para isso.
 10. **Nível.** Efeito bem abaixo da voz. O script nivela cada som pela loudness da voz, com um alvo por categoria e camada e um teto de pico (os números ficam no perfil e se ajustam pelo feedback). Nada mais alto que a voz, salvo um momento intencional. A mixagem final é da pessoa.
 
+11. **Cada som com função.** Antes de pôr um som, responda: o que aconteceu, o que a pessoa deve notar, por que o som ajuda. Sem resposta, sem som. Som físico para evento físico (contato, quebra, máquina); som discreto para explicação abstrata (um tique neutro na revelação de um número, abaixo da palavra falada). Alguns casos:
+    - **contador que avança:** tiques só nos incrementos que importam, não um por dígito;
+    - **expectativa que vira:** uma queda curta da música ou um silêncio pode fazer o trabalho melhor que um impacto;
+    - **evento grande e distante:** grave abafado e atrasado, que preserva a escala e a distância;
+    - **espaço ou vácuo:** trilha ou quase silêncio; nunca vender como "o som de lá";
+    - **volta ao normal:** a ambiência assenta e a música relaxa, em contraste com o trecho anterior;
+    - **resposta final:** resolver a frase musical ou deixar uma pausa limpa; nunca cortar a última sílaba para fechar um loop.
+12. **Gerar um som que falta.** O pedido descreve `fonte/ação + material/tamanho + distância + forma no tempo + duração + o que excluir` (ex.: "pedra pesada batendo em terra batida: um impacto grave e seco, poucos detritos, perto, ataque rápido e queda curta natural; sem vozes, sem melodia, sem repetição"). Um pedido de sequência inteira volta como uma mistura plausível com o tempo errado: peça cada evento importante separado e confira no corte.
+13. **Tempo planejado x medido.** Antes da voz existir, todo tempo é planejado. Depois, mede-se e alinha-se ao que foi falado e ao que aparece. Detector de silêncio mede nível de sinal, não "a pessoa pausou". Guarde as duas colunas na lista de eventos.
+14. **Conferir a mistura** em fone, num alto-falante pequeno de celular e em mono. Procure estalo nos cortes, bombeamento do ducking, palavra cortada e cauda vazia no fim. Pico de amostra não é pico real (true peak); RMS não é LUFS.
+
+(Os itens 11 a 14 vieram do estudo do guia de canal sem rosto da Higgsfield, em 11/2026, reescritos com as nossas palavras.)
+
 ## 3. A biblioteca
 - Pastas por categoria (whoosh, impacto, grave, riser, pop, clique, glitch, interface, ding, papel…), com um índice que o script gera. Para cada som, o índice guarda:
   - a duração útil (sem o silêncio do começo);
